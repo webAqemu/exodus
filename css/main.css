@@ -382,7 +382,7 @@ body {
   display: none;
 }
 
-.token {
+.token__list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
   padding: 0 24px;
@@ -391,7 +391,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
 }
-.token:hover {
+.token__list:hover {
   background-color: rgba(255, 255, 255, 0.06);
 }
 .token__item {
@@ -449,6 +449,7 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
   transition: opacity 0.3s;
+  transform: translateX(15px);
 }
 .token__grafic span {
   position: absolute;
@@ -476,4 +477,128 @@ body {
 .token__balance {
   opacity: 1;
   color: #d4d23f;
+}
+.token__view {
+  height: 0;
+  overflow: hidden;
+}
+.token__view.active {
+  padding-top: 24px;
+  height: auto;
+}
+.token__wrapper {
+  display: flex;
+  padding: 0 24px;
+}
+.token__curPrice {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 24px 0 0;
+}
+.token__curPrice div {
+  color: white;
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.token__curChange {
+  font-weight: 300;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-right: auto;
+}
+.token__curChange div {
+  color: red;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.token__curChange.positive div {
+  color: #00ff15;
+}
+.token__times {
+  display: flex;
+}
+.token__times li:not(:last-child) {
+  margin-right: 16px;
+}
+.token__times button {
+  text-transform: uppercase;
+  opacity: 0.6;
+  position: relative;
+  padding-bottom: 8px;
+}
+.token__times button::after {
+  content: "";
+  width: 100%;
+  height: 1.5px;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.token__times button:hover {
+  opacity: 0.8;
+}
+.token__times button.active {
+  opacity: 1;
+}
+.token__times button.active::after {
+  background-color: #fff;
+}
+.token__chart {
+  height: 300px;
+}
+.token .apexcharts-tooltip {
+  border: none !important;
+  background-color: #0a0e11 !important;
+  box-shadow: none;
+  transition: all 0s;
+  padding: 6px;
+  text-align: center;
+}
+.token .apexcharts-tooltip .apexcharts-tooltip-title {
+  border: none !important;
+  background-color: #0a0e11 !important;
+  text-align: center;
+}
+.token .apexcharts-tooltip .apexcharts-tooltip-marker {
+  display: none;
+}
+.token .apexcharts-tooltip .apexcharts-tooltip-text,
+.token .apexcharts-tooltip .apexcharts-tooltip-title {
+  font-family: "Etica", sans-serif !important;
+  font-weight: 400;
+  font-size: 14px !important;
+  line-height: 1.2;
+  margin-bottom: 0;
+  width: 100%;
+}
+.token .apexcharts-xaxis-texts-g text,
+.token .apexcharts-yaxis-texts-g text {
+  fill: white !important;
+}
+.token .apexcharts-xaxis-texts-g text::before,
+.token .apexcharts-yaxis-texts-g text::before {
+  content: "$";
+}
+.token .apexcharts-xaxis-texts-g text:nth-child(even),
+.token .apexcharts-yaxis-texts-g text:nth-child(even) {
+  display: none;
+}
+.token .apexcharts-linecap {
+  fill: white !important;
+}
+.token .apexcharts-tooltip-text-y-value,
+.token .apexcharts-tooltip-text-goals-value,
+.token .apexcharts-tooltip-text-z-value {
+  font-weight: 400;
+  margin: 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.token .apexcharts-tooltip-series-group {
+  padding: 0;
 }
