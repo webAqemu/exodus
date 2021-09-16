@@ -1,42 +1,155 @@
 // график для отображения имемющихся средств
-new Chartist.Pie(
-  ".profile__circle",
-  {
-    series: [60, 30, 10],
-  },
-  {
-    donut: true,
-    donutWidth: 5,
-    donutSolid: true,
-    startAngle: 0,
-    showLabel: false,
-  }
-);
+var pieOptions = {
+  series: [80, 15, 5],
 
-// превью графика монеты
-new Chartist.Line(
-  "#graficBTC",
-  {
-    labels: false,
-    series: [[5, 9, 7, 8, 5, 9, 7, 8, 5, 9, 7, 8, 5]],
+  colors: ["#d4d23f", "#00ff15", "#1758b9"],
+
+  chart: {
+    type: "donut",
+    height: 400,
   },
-  {
-    fullWidth: true,
-    stretch: true,
-    chartPadding: {
-      right: 0,
+
+  dataLabels: {
+    enabled: false,
+  },
+
+  legend: {
+    show: false,
+  },
+
+  pie: {
+    expandOnClick: false,
+    donut: {
+      size: "100%",
+
+      name: {
+        show: false,
+      },
+
+      value: {
+        show: false,
+      },
     },
-  }
-);
+  },
 
-new SimpleBar(document.getElementById("content"));
+  // убираем подсказки
+  tooltip: {
+    enabled: false,
+  },
+
+  // убираем бордер
+  stroke: {
+    width: 0,
+  },
+  // responsive: [
+  //   {
+  //     breakpoint: 480,
+  //     options: {
+  //       chart: {
+  //         width: 200,
+  //       },
+  //       legend: {
+  //         position: "bottom",
+  //       },
+  //     },
+  //   },
+  // ],
+};
+
+// надо уменьшить ширину + убрать ховер
+var pieChart = new ApexCharts(document.querySelector("#profile__circle"), pieOptions);
+pieChart.render();
 
 const BTC = {
   color: "#d4d23f",
 };
 
-// полноченный график монеты
-var options = {
+// кастомный скролл
+new SimpleBar(document.getElementById("content"));
+
+var smOptions = {
+  series: [
+    {
+      name: "",
+      data: [5, 9, 7, 8, 5, 9, 7, 8, 5, 9, 7, 8, 5],
+    },
+  ],
+  // общие настройки
+  chart: {
+    height: 73,
+    type: "line",
+    zoom: {
+      enabled: false,
+    },
+    toolbar: {
+      show: false,
+    },
+    animations: {
+      enabled: false,
+    },
+  },
+
+  dataLabels: {
+    enabled: false,
+  },
+
+  // изменение линии
+  stroke: {
+    curve: "straight",
+    width: 1.5,
+    colors: BTC.color,
+  },
+  // изменение сетки
+  grid: {
+    show: false,
+  },
+  // изменение на оси Х
+  xaxis: {
+    labels: {
+      show: false,
+    },
+
+    tooltip: {
+      enabled: false,
+    },
+
+    axisTicks: {
+      show: false,
+    },
+
+    crosshairs: {
+      show: false,
+    },
+
+    axisBorder: {
+      show: false,
+    },
+  },
+
+  // изменения на оси У
+  yaxis: {
+    labels: {
+      show: false,
+    },
+  },
+
+  tooltip: {
+    enabled: false,
+  },
+
+  // изменение area
+  colors: [BTC.color],
+};
+
+// превью графика монеты
+var smChartBTC = new ApexCharts(document.querySelector("#graficBTC"), smOptions);
+smChartBTC.render();
+
+var smChartETH = new ApexCharts(document.querySelector("#graficETH"), smOptions);
+smChartETH.render();
+
+// полноценный график монеты
+var mainOptions = {
   series: [
     {
       name: "",
@@ -126,8 +239,11 @@ var options = {
   colors: [BTC.color],
 };
 
-var chartBTC = new ApexCharts(document.querySelector("#chartBTC"), options);
+var chartBTC = new ApexCharts(document.querySelector("#chartBTC"), mainOptions);
 chartBTC.render();
+
+var chartETH = new ApexCharts(document.querySelector("#chartETH"), mainOptions);
+chartETH.render();
 
 // document.querySelectorAll(".token__chart").forEach((chart) => {
 //   chart.addEventListener("mousemove", function (e) {
@@ -141,15 +257,53 @@ chartBTC.render();
 //   });
 // });
 
+// показать/скрыть большой график монеты
 document.querySelectorAll(".token__grafic .show").forEach((btn) => {
   btn.addEventListener("click", function (e) {
     const parent = e.target.closest(".token");
-    const mainGrafic = parent.querySelector(".token__chart");
+    const content = e.target.querySelector(".show__btn");
     parent.querySelector(".token__view").classList.toggle("active");
-    if (e.target.innerHTML === "Expand") {
-      e.target.innerHTML = "Collapse";
+    if (content.innerHTML === "Expand") {
+      content.innerHTML = "Collapse";
     } else {
-      e.target.innerHTML = "Expand";
+      content.innerHTML = "Expand";
     }
   });
+});
+
+// переключение на настройки
+document.querySelector(".header").addEventListener("click", function (e) {
+  // открытие настроек
+  if (e.target.classList.contains("header__settings")) {
+    this.classList.add("settings");
+    document.querySelector(".curContent").classList.remove("curContent");
+    document.querySelector(".devices").classList.add("curContent");
+    document.querySelector(".menu__btn[data-content='devices']").parentElement.classList.add("active");
+  }
+
+  // переключение между контентом
+  if (e.target.dataset.content) {
+    const data = e.target.dataset.content;
+    document.querySelector(".curContent").classList.remove("curContent");
+    document.querySelector(`.${data}`).classList.add("curContent");
+
+    this.querySelector(".menu--settings .active").classList.remove("active");
+    e.target.parentElement.classList.add("active");
+  }
+
+  // возвращаемся домой
+  if (e.target.classList.contains("header__back")) {
+    this.classList.remove("settings");
+    document.querySelector(".curContent").classList.remove("curContent");
+    document.querySelector(".home").classList.add("curContent");
+    document.querySelector(".menu__item.active").parentElement.classList.remove("active");
+  }
+});
+
+// переход в создание пароля по ссылке в Security
+document.getElementById("goToBackUp").addEventListener("click", function (e) {
+  document.querySelector(".curContent").classList.remove("curContent");
+  document.querySelector(`.backup`).classList.add("curContent");
+  document.querySelector(".menu--settings .active").classList.remove("active");
+  document.querySelector(".menu__btn[data-content='backup']").parentElement.classList.add("active");
 });
