@@ -411,6 +411,7 @@ document.querySelector(".backup").addEventListener("click", function (e) {
   }
 });
 
+// слайдер монет в кошельке
 $(".coins").slick({
   variableWidth: true,
   infinite: false,
@@ -436,4 +437,19 @@ document.querySelector(".wallet").addEventListener("click", function (e) {
       e.target.parentElement.parentElement.classList.remove("open");
     }, 300);
   }
+
+  if (e.target.classList.contains("wallet__title")) {
+    e.target.parentElement.classList.toggle("opened");
+    e.target.classList.toggle("opened");
+  }
 });
+
+document.querySelector(".tabs").addEventListener("click", function (e) {
+  if (e.target.classList.contains("tabs__btn")) {
+    this.querySelector(".active").classList.remove("active");
+    e.target.parentElement.classList.add("active");
+  }
+});
+
+var walletChartBTC = new ApexCharts(document.querySelector("#walletChartBTC"), mainOptions);
+walletChartBTC.render();
