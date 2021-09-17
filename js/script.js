@@ -245,18 +245,6 @@ chartBTC.render();
 var chartETH = new ApexCharts(document.querySelector("#chartETH"), mainOptions);
 chartETH.render();
 
-// document.querySelectorAll(".token__chart").forEach((chart) => {
-//   chart.addEventListener("mousemove", function (e) {
-//     const trigger = (window.innerWidth - 67.73) / 2;
-//     const infoWindow = this.querySelector(".apexcharts-tooltip");
-//     if (e.clientX - 60 > trigger) {
-//       infoWindow.style.transform = "translateX(60%)";
-//     } else {
-//       infoWindow.style.transform = "translateX(-60%)";
-//     }
-//   });
-// });
-
 // показать/скрыть большой график монеты
 document.querySelectorAll(".token__grafic .show").forEach((btn) => {
   btn.addEventListener("click", function (e) {
@@ -287,15 +275,24 @@ document.querySelector(".header").addEventListener("click", function (e) {
     document.querySelector(".curContent").classList.remove("curContent");
     document.querySelector(`.${data}`).classList.add("curContent");
 
-    this.querySelector(".menu--settings .active").classList.remove("active");
-    e.target.parentElement.classList.add("active");
+    if (this.querySelector(".menu .active")) {
+      this.querySelector(".menu .active").classList.remove("active");
+      e.target.parentElement.classList.add("active");
+    }
+
+    if (this.querySelector(".menu--settings .active")) {
+      this.querySelector(".menu--settings .active").classList.remove("active");
+      e.target.parentElement.classList.add("active");
+    }
   }
 
   // возвращаемся домой
   if (e.target.classList.contains("header__back")) {
     this.classList.remove("settings");
     document.querySelector(".curContent").classList.remove("curContent");
+    this.querySelector(".menu .active").classList.remove("active");
     document.querySelector(".home").classList.add("curContent");
+    document.querySelector(".menu__btn--home").parentElement.classList.add("active");
     document.querySelector(".menu__item.active").parentElement.classList.remove("active");
   }
 });
@@ -306,4 +303,137 @@ document.getElementById("goToBackUp").addEventListener("click", function (e) {
   document.querySelector(`.backup`).classList.add("curContent");
   document.querySelector(".menu--settings .active").classList.remove("active");
   document.querySelector(".menu__btn[data-content='backup']").parentElement.classList.add("active");
+});
+
+// убираем класс btn--disabled при вводе пароля от 8 символов
+document.querySelectorAll(".backup__input").forEach((input) => {
+  input.addEventListener("input", function (e) {
+    if (input.value.length >= 8) {
+      input.parentElement.querySelector(".btn[type='submit']").classList.remove("btn--disabled");
+    } else {
+      input.parentElement.querySelector(".btn[type='submit']").classList.add("btn--disabled");
+    }
+  });
+});
+
+// переключение по этапам backup
+document.querySelector(".backup").addEventListener("click", function (e) {
+  e.preventDefault();
+  if (e.target.classList.contains("btn")) {
+    const action = e.target.dataset.action;
+    const stepEl = e.target.closest(".backup__step");
+    const step = stepEl.dataset.step;
+    const stepNum = stepEl.dataset.stepnum;
+    const nextStepEl = this.querySelector(`.backup__step[data-stepnum="${+stepNum + 1}"]`);
+    const stepNumEl = this.querySelector(`.steps__item[data-step="${step}"]`);
+    const nextStepNumEl = this.querySelector(`.steps__item[data-step="${nextStepEl.dataset.step}"]`);
+    // переключение на след этап
+    if (action === "next") {
+      // плавно убираем curent step
+      stepEl.style.opacity = 0;
+      nextStepEl.style.opacity = 0;
+      setTimeout(() => {
+        stepNumEl.classList.add("completed");
+        nextStepNumEl.classList.add("current");
+        stepEl.classList.add("hidden");
+        nextStepEl.classList.remove("hidden");
+        nextStepEl.style.opacity = 1;
+      }, 300);
+    }
+
+    if (action === "back") {
+      const prevStepEl = this.querySelector(`.backup__step[data-stepnum="${+stepNum - 1}"]`);
+      const prevStepNumEl = this.querySelector(`.steps__item[data-step="${prevStepEl.dataset.step}"]`);
+      // плавно убираем curent step
+      stepEl.style.opacity = 0;
+      prevStepEl.style.opacity = 0;
+      setTimeout(() => {
+        stepNumEl.classList.remove("current");
+        prevStepNumEl.classList.add("current");
+        prevStepNumEl.classList.remove("completed");
+        stepEl.classList.add("hidden");
+        prevStepEl.classList.remove("hidden");
+        prevStepEl.style.opacity = 1;
+      }, 300);
+    }
+
+    if (action === "print") {
+      // Function to download data to a file
+      function download(data, filename, type) {
+        var file = new Blob([data], { type: type });
+        if (window.navigator.msSaveOrOpenBlob)
+          // IE10+
+          window.navigator.msSaveOrOpenBlob(file, filename);
+        else {
+          // Others
+          var a = document.createElement("a"),
+            url = URL.createObjectURL(file);
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(function () {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+          }, 0);
+        }
+      }
+
+      let phrase = [];
+      document.querySelectorAll(".backup__word").forEach((word) => {
+        phrase.push(word.innerHTML);
+      });
+
+      phrase = phrase.join(" ");
+
+      download(phrase, "phrase", "txt");
+    }
+
+    if (action === "finish") {
+      stepEl.style.opacity = 0;
+      nextStepEl.style.opacity = 0;
+      setTimeout(() => {
+        stepNumEl.classList.add("completed");
+        stepEl.classList.add("hidden");
+        nextStepEl.classList.remove("hidden");
+        nextStepEl.style.opacity = 1;
+      }, 300);
+    }
+  }
+
+  // выбор слова которое было во фразе в пред. шаге
+  if (e.target.dataset.word) {
+    const word = e.target.dataset.word;
+    if (this.querySelector(".backup__checklist button.active")) {
+      this.querySelector(".backup__checklist button.active").classList.remove("active");
+    }
+    e.target.classList.add("active");
+  }
+});
+
+$(".coins").slick({
+  variableWidth: true,
+  infinite: false,
+  nextArrow: '<button type="button" class="coins__arrow coins__arrow--next"></button>',
+  prevArrow: '<button type="button" class="coins__arrow coins__arrow--prev"></button>',
+});
+
+document.querySelector(".wallet").addEventListener("click", function (e) {
+  if (e.target.classList.contains("wallet__open")) {
+    e.preventDefault();
+    e.target.parentElement.classList.toggle("open");
+    setTimeout(() => {
+      if (e.target.parentElement.querySelector(".search")) {
+        e.target.parentElement.querySelector(".search").style.width = "220px";
+      }
+    }, 100);
+  }
+
+  if (e.target.classList.contains("search__close")) {
+    e.preventDefault();
+    e.target.parentElement.parentElement.querySelector(".search").style.width = "60px";
+    setTimeout(() => {
+      e.target.parentElement.parentElement.classList.remove("open");
+    }, 300);
+  }
 });
