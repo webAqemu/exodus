@@ -9,7 +9,7 @@ var pieOptions = {
 
   chart: {
     type: "donut",
-    height: 400,
+    height: 350,
   },
 
   dataLabels: {

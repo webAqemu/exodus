@@ -1,1 +1,63 @@
-<!DOCTYPE html ><html lang="ru"><head> <meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&amp;display=swap" rel="stylesheet"/><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/><link rel="stylesheet" href="css/main.css"/><title>Document</title></head><body> <header class="header"><nav class="header__nav"> <a class="logo" href="index.html"><div class="logo__img" style="background-image: none"> </div><div class="logo__text">EXODDOS</div></a><ul class="menu"> <li class="menu__item active"><a class="menu__btn menu__btn--home" href="index.html"></a><span class="header__desc">Portfolio</span></li><li class="menu__item"><a class="menu__btn menu__btn--wallet" href="wallet.html"></a><span class="header__desc">Wallet</span></li><li class="menu__item"><a class="menu__btn menu__btn--exchange" href="exchange.html"></a><span class="header__desc">Exchange</span></li></ul><a class="header__settings" href="devices.html"><span class="header__desc">Settings</span></a></nav></header><main class="main" id="content"><div class="exchange"><div class="exchange__inner"><div class="exchange__item"> <div class="exchange__balance">Balance: 0 Bitcoin</div><button class="exchange__choose"> <img src="./img/icons/BTC.svg" alt="btc"/>BTC </button><input class="exchange__input" placeholder="0.00"/><span class="exchange__dollars">≈ $0.00</span></div><button class="exchange__swap"> </button><div class="exchange__item"> <div class="exchange__balance">Balance: 0 Ethereum</div><button class="exchange__choose"> <img src="./img/icons/BTC.svg" alt="btc"/>ETH </button><input class="exchange__input" placeholder="0.00"/><span class="exchange__dollars">≈ $0.00</span></div></div><ul class="exchange__parts"> <li class="exchange__part"> <button>min</button></li><li class="exchange__part"> <button>half</button></li><li class="exchange__part"> <button>max </button></li></ul><button class="exchange__submit disabled">enter amount </button><div class="exchange__value">1 BTC = 13.425079 ETH </div><a class="exchange__history" href="history.html">Exchange History</a></div></main></body><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script><script src="./js/apexcharts.min.js"> </script><script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script><script src="./js/script.js"></script></html>
+<!DOCTYPE html >
+<html lang="ru">
+  <head> 
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <title>Document</title>
+  </head>
+  <body> 
+    <header class="header">
+      <nav class="header__nav"> <a class="logo" href="index.html">
+          <div class="logo__img" style="background-image: none"> </div>
+          <div class="logo__text">EXODDOS</div></a>
+        <ul class="menu"> 
+          <li class="menu__item active"><a class="menu__btn menu__btn--home" href="index.html"></a><span class="header__desc">Portfolio</span></li>
+          <li class="menu__item"><a class="menu__btn menu__btn--wallet" href="wallet.html"></a><span class="header__desc">Wallet</span></li>
+          <li class="menu__item"><a class="menu__btn menu__btn--exchange" href="exchange.html"></a><span class="header__desc">Exchange</span></li>
+        </ul><a class="header__settings" href="devices.html"><span class="header__desc">Settings</span></a>
+      </nav>
+    </header>
+    <main class="main" id="content">
+      <div class="exchange">
+        <div class="exchange__inner">
+          <div class="exchange__item"> 
+            <div class="exchange__balance">Balance: 0 Bitcoin</div>
+            <button class="exchange__choose"> <img src="./img/icons/BTC.svg" alt="btc"/>BTC </button>
+            <input class="exchange__input" placeholder="0.00"/><span class="exchange__dollars">≈ $0.00</span>
+          </div>
+          <button class="exchange__swap"> </button>
+          <div class="exchange__item"> 
+            <div class="exchange__balance">Balance: 0 Ethereum</div>
+            <button class="exchange__choose"> <img src="./img/icons/BTC.svg" alt="btc"/>ETH </button>
+            <input class="exchange__input" placeholder="0.00"/><span class="exchange__dollars">≈ $0.00</span>
+          </div>
+        </div>
+        <ul class="exchange__parts"> 
+          <li class="exchange__part"> 
+            <button>min</button>
+          </li>
+          <li class="exchange__part"> 
+            <button>half</button>
+          </li>
+          <li class="exchange__part"> 
+            <button>max </button>
+          </li>
+        </ul>
+        <button class="exchange__submit disabled">enter amount </button>
+        <div class="exchange__value">1 BTC = 13.425079 ETH </div><a class="exchange__history" href="history.html">Exchange History</a>
+      </div>
+    </main>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="./js/apexcharts.min.js"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="./js/script.js"></script>
+</html>

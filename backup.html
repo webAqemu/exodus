@@ -1,1 +1,158 @@
-<!DOCTYPE html ><html lang="ru"><head> <meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&amp;display=swap" rel="stylesheet"/><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/><link rel="stylesheet" href="css/main.css"/><title>Document</title></head><body> <header class="header"><nav class="header__nav"> <a class="header__back" href="index.html"></a><a class="logo" href="#"><div class="logo__img" style="background-image: none"> </div></a><ul class="menu menu--settings"> <li class="menu__item active"><a class="menu__btn" href="devices.html">Devices</a></li><li class="menu__item"><a class="menu__btn" href="personalize.html">Personalize</a></li><li class="menu__item"><a class="menu__btn" href="security.html">Security</a></li><li class="menu__item"><a class="menu__btn" href="backup.html">Backup</a></li></ul><a class="header__settings" href="devices.html"><span class="header__desc">Settings</span></a></nav></header><main class="main" id="content"><div class="backup" data-content="backup"><ul class="steps"> <li class="steps__item current" data-step="password"><div class="steps__num">1</div><div class="steps__text">Password</div><div class="steps__line"></div></li><li class="steps__item" data-step="confirm"><div class="steps__num">2</div><div class="steps__text">Confirm</div><div class="steps__line"></div></li><li class="steps__item" data-step="12Phrase"><div class="steps__num">3</div><div class="steps__text">PaperBackup</div><div class="steps__line"></div></li><li class="steps__item" data-step="finish"><div class="steps__num">4</div><div class="steps__text">Finish</div><div class="steps__line"></div></li></ul><div class="backup__inner"><div class="backup__step" data-step="password" data-stepnum="1"><h2 class="backup__title title">Create your password</h2><p class="backup__text">You must remember your password - it can NOT be recovered. Your password protects your wallet, it shoud be different from your other passwords in case someone gets access to your computer.</p><form class="backup__form"><input class="backup__input" type="password" placeholder="Type your unique password..." required="required"/><button class="backup__btn btn btn--empty btn--disabled" type="submit" data-action="next"> <span>Next</span></button></form><div class="backup__warning">WARNING: Do NOT use the same password as your other intenrnet websites, social media or email accounts.<a href="#">Learn the best tips to protect your wealth</a></div></div><div class="backup__step hidden" data-step="confirm" data-stepnum="2"><h2 class="backup__title title">Memorize your password</h2><p class="backup__text">Its time to practice your password. Remember, if you forget your password there is no way to get it back! Make sure you've got your password memorized and it is different than any of your other passwords.</p><form class="backup__form"><input class="backup__input" type="password" placeholder="Type your password again..." required="required"/><div class="backup__btns"><button class="backup__btn btn btn--grey" data-action="back"> <span>Back</span></button><button class="backup__btn btn btn--empty btn--disabled" type="submit" data-action="next"> <span>Next</span></button></div></form><div class="backup__warning">Write down your password and keep it somewhere safe, like a safe deposit box, until you memorize it.</div></div><div class="backup__step hidden" data-step="12Phrase" data-stepnum="3"><h2 class="backup__title title">Write Down Your 12-word Prase</h2><p class="backup__text">Your 12-word recovery phrase allows you to recover youe wallet in case you ever lose access to it. Write down the words in the correct order from 1 to 12 and store them somewhere safe. Anyone with your recovery phrase can spend your funds. Do not show it to anyone!</p><p class="backup__text backup__text--pink">Your secret recovery phrase is hidden for security. Mouseover the numbers to reveal.</p><ul class="backup__phrase"> <li> <div class="backup__word">hello</div>1</li><li> <div class="backup__word">hello</div>2</li><li> <div class="backup__word">hello</div>3</li><li> <div class="backup__word">hello</div>4</li><li> <div class="backup__word">hello</div>5</li><li> <div class="backup__word">hello</div>6</li><li> <div class="backup__word">hello</div>7</li><li> <div class="backup__word">hello</div>8</li><li> <div class="backup__word">hello</div>9</li><li> <div class="backup__word">hello</div>10</li><li> <div class="backup__word">hello</div>11</li><li> <div class="backup__word">hello</div>12</li></ul><div class="backup__btns"><button class="backup__btn btn btn--grey" data-action="print"> <span>print phrase</span></button><button class="backup__btn btn btn--empty" data-action="next"> <span>Next</span></button></div><div class="backup__warning">To protect against loss, fire or damage, keep two copies inside plastic bags and store them in separate physical location</div></div><div class="backup__step hidden" data-step="finish" data-stepnum="4"><h2 class="backup__title title">Checl Your Paper backup</h2><p class="backup__text">This is the last step! Which word from the list below belongs to your paper  backup</p><ul class="backup__checklist"> <li><button data-word="hello">hello</button></li><li><button data-word="hi">hi</button></li><li><button data-word="helo">helo</button></li><li><button data-word="h!">h!</button></li></ul><div class="backup__btns"><button class="backup__btn btn btn--grey" data-action="back"> <span>Back</span></button><button class="backup__btn btn btn--empty" data-action="finish"> <span>finish</span></button></div><div class="backup__warning">This final step shows wrong words and one correct word to make sure you have you paper backup.</div></div><div class="backup__step hidden" data-step="result" data-stepnum="5"><h2 class="backup__title title">Backup Completed</h2><p class="backup__text">Yout backup was updated auromatically 6 minuts ago. <a href="#">Learn more</a></p></div></div></div></main></body><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script><script src="./js/apexcharts.min.js"> </script><script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script><script src="./js/script.js"></script></html>
+<!DOCTYPE html >
+<html lang="ru">
+  <head> 
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <title>Document</title>
+  </head>
+  <body> 
+    <header class="header">
+      <nav class="header__nav"> <a class="header__back" href="index.html"></a><a class="logo" href="#">
+          <div class="logo__img" style="background-image: none"> </div></a>
+        <ul class="menu menu--settings"> 
+          <li class="menu__item"><a class="menu__btn" href="login.html">Login</a></li>
+          <li class="menu__item active"><a class="menu__btn" href="devices.html">Devices</a></li>
+          <li class="menu__item"><a class="menu__btn" href="personalize.html">Personalize</a></li>
+          <li class="menu__item"><a class="menu__btn" href="security.html">Security</a></li>
+          <li class="menu__item"><a class="menu__btn" href="backup.html">Backup</a></li>
+        </ul><a class="header__settings" href="devices.html"><span class="header__desc">Settings</span></a>
+      </nav>
+    </header>
+    <main class="main" id="content">
+      <div class="backup" data-content="backup">
+        <ul class="steps"> 
+          <li class="steps__item current" data-step="password">
+            <div class="steps__num">1</div>
+            <div class="steps__text">Password</div>
+            <div class="steps__line"></div>
+          </li>
+          <li class="steps__item" data-step="confirm">
+            <div class="steps__num">2</div>
+            <div class="steps__text">Confirm</div>
+            <div class="steps__line"></div>
+          </li>
+          <li class="steps__item" data-step="12Phrase">
+            <div class="steps__num">3</div>
+            <div class="steps__text">PaperBackup</div>
+            <div class="steps__line"></div>
+          </li>
+          <li class="steps__item" data-step="finish">
+            <div class="steps__num">4</div>
+            <div class="steps__text">Finish</div>
+            <div class="steps__line"></div>
+          </li>
+        </ul>
+        <div class="backup__inner">
+          <div class="backup__step" data-step="password" data-stepnum="1">
+            <h2 class="backup__title title">Create your password</h2>
+            <p class="backup__text">You must remember your password - it can NOT be recovered. Your password protects your wallet, it shoud be different from your other passwords in case someone gets access to your computer.</p>
+            <form class="backup__form">
+              <input class="backup__input" type="password" placeholder="Type your unique password..." required="required"/>
+              <button class="backup__btn btn btn--empty btn--disabled" type="submit" data-action="next"> <span>Next</span></button>
+            </form>
+            <div class="backup__warning">WARNING: Do NOT use the same password as your other intenrnet websites, social media or email accounts.<a href="#">Learn the best tips to protect your wealth</a></div>
+          </div>
+          <div class="backup__step hidden" data-step="confirm" data-stepnum="2">
+            <h2 class="backup__title title">Memorize your password</h2>
+            <p class="backup__text">Its time to practice your password. Remember, if you forget your password there is no way to get it back! Make sure you've got your password memorized and it is different than any of your other passwords.</p>
+            <form class="backup__form">
+              <input class="backup__input" type="password" placeholder="Type your password again..." required="required"/>
+              <div class="backup__btns">
+                <button class="backup__btn btn btn--grey" data-action="back"> <span>Back</span></button>
+                <button class="backup__btn btn btn--empty btn--disabled" type="submit" data-action="next"> <span>Next</span></button>
+              </div>
+            </form>
+            <div class="backup__warning">Write down your password and keep it somewhere safe, like a safe deposit box, until you memorize it.</div>
+          </div>
+          <div class="backup__step hidden" data-step="12Phrase" data-stepnum="3">
+            <h2 class="backup__title title">Write Down Your 12-word Prase</h2>
+            <p class="backup__text">Your 12-word recovery phrase allows you to recover youe wallet in case you ever lose access to it. Write down the words in the correct order from 1 to 12 and store them somewhere safe. Anyone with your recovery phrase can spend your funds. Do not show it to anyone!</p>
+            <p class="backup__text backup__text--pink">Your secret recovery phrase is hidden for security. Mouseover the numbers to reveal.</p>
+            <ul class="backup__phrase"> 
+              <li> 
+                <div class="backup__word">hello</div>1
+              </li>
+              <li> 
+                <div class="backup__word">hello</div>2
+              </li>
+              <li> 
+                <div class="backup__word">hello</div>3
+              </li>
+              <li> 
+                <div class="backup__word">hello</div>4
+              </li>
+              <li> 
+                <div class="backup__word">hello</div>5
+              </li>
+              <li> 
+                <div class="backup__word">hello</div>6
+              </li>
+              <li> 
+                <div class="backup__word">hello</div>7
+              </li>
+              <li> 
+                <div class="backup__word">hello</div>8
+              </li>
+              <li> 
+                <div class="backup__word">hello</div>9
+              </li>
+              <li> 
+                <div class="backup__word">hello</div>10
+              </li>
+              <li> 
+                <div class="backup__word">hello</div>11
+              </li>
+              <li> 
+                <div class="backup__word">hello</div>12
+              </li>
+            </ul>
+            <div class="backup__btns">
+              <button class="backup__btn btn btn--grey" data-action="print"> <span>print phrase</span></button>
+              <button class="backup__btn btn btn--empty" data-action="next"> <span>Next</span></button>
+            </div>
+            <div class="backup__warning">To protect against loss, fire or damage, keep two copies inside plastic bags and store them in separate physical location</div>
+          </div>
+          <div class="backup__step hidden" data-step="finish" data-stepnum="4">
+            <h2 class="backup__title title">Checl Your Paper backup</h2>
+            <p class="backup__text">This is the last step! Which word from the list below belongs to your paper  backup</p>
+            <ul class="backup__checklist"> 
+              <li>
+                <button data-word="hello">hello</button>
+              </li>
+              <li>
+                <button data-word="hi">hi</button>
+              </li>
+              <li>
+                <button data-word="helo">helo</button>
+              </li>
+              <li>
+                <button data-word="h!">h!</button>
+              </li>
+            </ul>
+            <div class="backup__btns">
+              <button class="backup__btn btn btn--grey" data-action="back"> <span>Back</span></button>
+              <button class="backup__btn btn btn--empty" data-action="finish"> <span>finish</span></button>
+            </div>
+            <div class="backup__warning">This final step shows wrong words and one correct word to make sure you have you paper backup.</div>
+          </div>
+          <div class="backup__step hidden" data-step="result" data-stepnum="5">
+            <h2 class="backup__title title">Backup Completed</h2>
+            <p class="backup__text">Yout backup was updated auromatically 6 minuts ago. <a href="#">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="./js/apexcharts.min.js"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="./js/script.js"></script>
+</html>

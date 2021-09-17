@@ -478,9 +478,9 @@ body {
 .profile__num {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: calc(50% - 33px);
   transform: translate(-50%, -50%);
-  font-size: 48px;
+  font-size: 42px;
 }
 .profile__num .small {
   font-size: 24px;
@@ -1709,6 +1709,45 @@ body {
   font-size: 20px;
   opacity: 0.6;
   text-align: center;
+}
+
+.login__title {
+  margin-bottom: 64px;
+}
+.login__form {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login__input {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(10, 14, 17, 0.4);
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+.login__input:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.login__btn {
+  max-width: 240px;
+  width: 100%;
+}
+.login__text {
+  text-align: center;
+  letter-spacing: 1px;
+}
+.login__link {
+  color: #f700ff;
+  margin-left: 4px;
+  text-decoration: underline;
 }
 
 .devices {

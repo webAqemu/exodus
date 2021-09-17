@@ -1,1 +1,227 @@
-<!DOCTYPE html ><html lang="ru"><head> <meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&amp;display=swap" rel="stylesheet"/><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/><link rel="stylesheet" href="css/main.css"/><title>Document</title></head><body> <header class="header"><nav class="header__nav"> <a class="logo" href="index.html"><div class="logo__img" style="background-image: none"> </div><div class="logo__text">EXODDOS</div></a><ul class="menu"> <li class="menu__item active"><a class="menu__btn menu__btn--home" href="index.html"></a><span class="header__desc">Portfolio</span></li><li class="menu__item"><a class="menu__btn menu__btn--wallet" href="wallet.html"></a><span class="header__desc">Wallet</span></li><li class="menu__item"><a class="menu__btn menu__btn--exchange" href="exchange.html"></a><span class="header__desc">Exchange</span></li></ul><a class="header__settings" href="devices.html"><span class="header__desc">Settings</span></a></nav></header><main class="main" id="content"><div class="wallet"><ul class="wallet__menu"><li class="wallet__types"> <button class="wallet__open"></button><div class="sort"> <div class="sort__title">sort assets by </div><ul class="sort__list"> <li> <button class="sort__btn choosed" data-sort="default">default</button></li><li> <button class="sort__btn" data-sort="balance">balance</button></li><li> <button class="sort__btn" data-sort="marketCap">market cap</button></li><li> <button class="sort__btn" data-sort="alphabetic">alphabetic</button></li><li> <button class="sort__btn" data-sort="APYRewards">APY rewards</button></li></ul><div class="sort__title">filters assets </div><div class="sort__check"> <input type="checkbox" name="withBalance"/><label for="withBalance">with balance </label></div><div class="sort__check"> <input type="checkbox" name="favourite"/><label for="favourite">favourite</label></div></div></li><li class="wallet__search"> <button class="wallet__open"></button><form class="search"><button class="search__btn" type="submit"> </button><input class="search__input" type="text" placeholder="Search..."/><button class="search__close"></button></form></li><li class="wallet__list"><ul class="coins"> <li class="coins__slide"><button class="coins__item"> <div class="coins__name">Bitcoin Cash</div><div class="coins__amount">0 bch</div><div class="coins__line"></div></button></li><li class="coins__slide"><button class="coins__item"> <div class="coins__name">Bitcoin Cash</div><div class="coins__amount">0 bch</div><div class="coins__line"></div></button></li><li class="coins__slide"><button class="coins__item"> <div class="coins__name">Bitcoin Cash</div><div class="coins__amount">0 bch</div><div class="coins__line"></div></button></li><li class="coins__slide"><button class="coins__item"> <div class="coins__name">Bitcoin Cash</div><div class="coins__amount">0 bch</div><div class="coins__line"></div></button></li><li class="coins__slide"><button class="coins__item"> <div class="coins__name">Bitcoin Cash</div><div class="coins__amount">0 bch</div><div class="coins__line"></div></button></li><li class="coins__slide"><button class="coins__item"> <div class="coins__name">Bitcoin Cash</div><div class="coins__amount">0 bch</div><div class="coins__line"></div></button></li><li class="coins__slide"><button class="coins__item"> <div class="coins__name">Bitcoin Cash</div><div class="coins__amount">0 bch</div><div class="coins__line"></div></button></li><li class="coins__slide"><button class="coins__item"> <div class="coins__name">Bitcoin Cash</div><div class="coins__amount">0 bch</div><div class="coins__line"></div></button></li><li class="coins__slide"><button class="coins__add">Add More</button></li></ul></li></ul><div class="wallet__coin coin"> <img class="coin__img" src="./img/icons/BTC.svg" alt="coin icon" width="64" height="64"/><div class="coin__price"> <span class="num">0</span>bch </div><div class="coin__owned">$<span>0.00</span>usd </div><div class="coin__btns"> <button class="coin__btn">Send</button><button class="coin__btn">Recieve</button><button class="coin__exchange"></button></div></div><div class="wallet__chart"><button class="wallet__title">price chart </button><div class="token__wrapper"><div class="token__curPrice"> <div>$411.68</div>1 BTC</div><div class="token__curChange positive"> <div>+3.04%</div>24H Change</div><ul class="token__times"><li><button data-time="day">1d</button></li><li><button data-time="week">1w</button></li><li><button class="active" data-time="month">1m</button></li><li><button data-time="3month">3m</button></li><li><button data-time="6month">6m</button></li><li><button data-time="year">1y</button></li></ul></div><div class="token__chart" id="walletChartBTC"></div></div><ul class="tabs"><li class="active"><button class="tabs__btn">activity</button><div class="line"></div><div class="tabs__content tabs__activity"> <div class="tabs__empty">no bitcoin cash transactions</div></div></li><li><button class="tabs__btn">about</button><div class="line"></div><div class="tabs__content tabs__about"> <div class="tabs__text">BitcoinCash is a fork, or split, from original Bitcoin that attempts to increase network transaction capacity in order to be useful for small, everybody transactions.</div><ul class="tabs__links"> <li> <a href="#" style="background-image:url(./img/icons/chain.svg)"> </a></li><li> <a href="#" style="background-image:url(./img/icons/reddit-logo.svg)"> </a></li></ul></div></li><li><button class="tabs__btn">videos</button><div class="line"></div><div class="tabs__content tabs__videos"> <ul class="videos"> <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li><li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li><li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li></ul></div></li><li><button class="tabs__btn">blog</button><div class="line"></div><div class="tabs__content tabs__blog"><ul class="videos"> <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li><li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li><li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li><li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li><li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li></ul></div></li></ul></div></main></body><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script><script src="./js/apexcharts.min.js"> </script><script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script><script src="./js/script.js"></script></html>
+<!DOCTYPE html >
+<html lang="ru">
+  <head> 
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <title>Document</title>
+  </head>
+  <body> 
+    <header class="header">
+      <nav class="header__nav"> <a class="logo" href="index.html">
+          <div class="logo__img" style="background-image: none"> </div>
+          <div class="logo__text">EXODDOS</div></a>
+        <ul class="menu"> 
+          <li class="menu__item active"><a class="menu__btn menu__btn--home" href="index.html"></a><span class="header__desc">Portfolio</span></li>
+          <li class="menu__item"><a class="menu__btn menu__btn--wallet" href="wallet.html"></a><span class="header__desc">Wallet</span></li>
+          <li class="menu__item"><a class="menu__btn menu__btn--exchange" href="exchange.html"></a><span class="header__desc">Exchange</span></li>
+        </ul><a class="header__settings" href="devices.html"><span class="header__desc">Settings</span></a>
+      </nav>
+    </header>
+    <main class="main" id="content">
+      <div class="wallet">
+        <ul class="wallet__menu">
+          <li class="wallet__types"> 
+            <button class="wallet__open"></button>
+            <div class="sort"> 
+              <div class="sort__title">sort assets by </div>
+              <ul class="sort__list"> 
+                <li> 
+                  <button class="sort__btn choosed" data-sort="default">default</button>
+                </li>
+                <li> 
+                  <button class="sort__btn" data-sort="balance">balance</button>
+                </li>
+                <li> 
+                  <button class="sort__btn" data-sort="marketCap">market cap</button>
+                </li>
+                <li> 
+                  <button class="sort__btn" data-sort="alphabetic">alphabetic</button>
+                </li>
+                <li> 
+                  <button class="sort__btn" data-sort="APYRewards">APY rewards</button>
+                </li>
+              </ul>
+              <div class="sort__title">filters assets </div>
+              <div class="sort__check"> 
+                <input type="checkbox" name="withBalance"/>
+                <label for="withBalance">with balance </label>
+              </div>
+              <div class="sort__check"> 
+                <input type="checkbox" name="favourite"/>
+                <label for="favourite">favourite</label>
+              </div>
+            </div>
+          </li>
+          <li class="wallet__search"> 
+            <button class="wallet__open"></button>
+            <form class="search">
+              <button class="search__btn" type="submit"> </button>
+              <input class="search__input" type="text" placeholder="Search..."/>
+              <button class="search__close"></button>
+            </form>
+          </li>
+          <li class="wallet__list">
+            <ul class="coins"> 
+              <li class="coins__slide">
+                <button class="coins__item"> 
+                  <div class="coins__name">Bitcoin Cash</div>
+                  <div class="coins__amount">0 bch</div>
+                  <div class="coins__line"></div>
+                </button>
+              </li>
+              <li class="coins__slide">
+                <button class="coins__item"> 
+                  <div class="coins__name">Bitcoin Cash</div>
+                  <div class="coins__amount">0 bch</div>
+                  <div class="coins__line"></div>
+                </button>
+              </li>
+              <li class="coins__slide">
+                <button class="coins__item"> 
+                  <div class="coins__name">Bitcoin Cash</div>
+                  <div class="coins__amount">0 bch</div>
+                  <div class="coins__line"></div>
+                </button>
+              </li>
+              <li class="coins__slide">
+                <button class="coins__item"> 
+                  <div class="coins__name">Bitcoin Cash</div>
+                  <div class="coins__amount">0 bch</div>
+                  <div class="coins__line"></div>
+                </button>
+              </li>
+              <li class="coins__slide">
+                <button class="coins__item"> 
+                  <div class="coins__name">Bitcoin Cash</div>
+                  <div class="coins__amount">0 bch</div>
+                  <div class="coins__line"></div>
+                </button>
+              </li>
+              <li class="coins__slide">
+                <button class="coins__item"> 
+                  <div class="coins__name">Bitcoin Cash</div>
+                  <div class="coins__amount">0 bch</div>
+                  <div class="coins__line"></div>
+                </button>
+              </li>
+              <li class="coins__slide">
+                <button class="coins__item"> 
+                  <div class="coins__name">Bitcoin Cash</div>
+                  <div class="coins__amount">0 bch</div>
+                  <div class="coins__line"></div>
+                </button>
+              </li>
+              <li class="coins__slide">
+                <button class="coins__item"> 
+                  <div class="coins__name">Bitcoin Cash</div>
+                  <div class="coins__amount">0 bch</div>
+                  <div class="coins__line"></div>
+                </button>
+              </li>
+              <li class="coins__slide">
+                <button class="coins__add">Add More</button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div class="wallet__coin coin"> <img class="coin__img" src="./img/icons/BTC.svg" alt="coin icon" width="64" height="64"/>
+          <div class="coin__price"> <span class="num">0</span>bch </div>
+          <div class="coin__owned">$<span>0.00</span>usd </div>
+          <div class="coin__btns"> 
+            <button class="coin__btn">Send</button>
+            <button class="coin__btn">Recieve</button>
+            <button class="coin__exchange"></button>
+          </div>
+        </div>
+        <div class="wallet__chart">
+          <button class="wallet__title">price chart </button>
+          <div class="token__wrapper">
+            <div class="token__curPrice"> 
+              <div>$411.68</div>1 BTC
+            </div>
+            <div class="token__curChange positive"> 
+              <div>+3.04%</div>24H Change
+            </div>
+            <ul class="token__times">
+              <li>
+                <button data-time="day">1d</button>
+              </li>
+              <li>
+                <button data-time="week">1w</button>
+              </li>
+              <li>
+                <button class="active" data-time="month">1m</button>
+              </li>
+              <li>
+                <button data-time="3month">3m</button>
+              </li>
+              <li>
+                <button data-time="6month">6m</button>
+              </li>
+              <li>
+                <button data-time="year">1y</button>
+              </li>
+            </ul>
+          </div>
+          <div class="token__chart" id="walletChartBTC"></div>
+        </div>
+        <ul class="tabs">
+          <li class="active">
+            <button class="tabs__btn">activity</button>
+            <div class="line"></div>
+            <div class="tabs__content tabs__activity"> 
+              <div class="tabs__empty">no bitcoin cash transactions</div>
+            </div>
+          </li>
+          <li>
+            <button class="tabs__btn">about</button>
+            <div class="line"></div>
+            <div class="tabs__content tabs__about"> 
+              <div class="tabs__text">BitcoinCash is a fork, or split, from original Bitcoin that attempts to increase network transaction capacity in order to be useful for small, everybody transactions.</div>
+              <ul class="tabs__links"> 
+                <li> <a href="#" style="background-image:url(./img/icons/chain.svg)"> </a></li>
+                <li> <a href="#" style="background-image:url(./img/icons/reddit-logo.svg)"> </a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <button class="tabs__btn">videos</button>
+            <div class="line"></div>
+            <div class="tabs__content tabs__videos"> 
+              <ul class="videos"> 
+                <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
+                <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
+                <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <button class="tabs__btn">blog</button>
+            <div class="line"></div>
+            <div class="tabs__content tabs__blog">
+              <ul class="videos"> 
+                <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
+                <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
+                <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
+                <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
+                <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="./js/apexcharts.min.js"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="./js/script.js"></script>
+</html>

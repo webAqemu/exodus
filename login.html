@@ -14,25 +14,26 @@
   </head>
   <body> 
     <header class="header">
-      <nav class="header__nav"> <a class="logo" href="index.html">
-          <div class="logo__img" style="background-image: none"> </div>
-          <div class="logo__text">EXODDOS</div></a>
-        <ul class="menu"> 
-          <li class="menu__item active"><a class="menu__btn menu__btn--home" href="index.html"></a><span class="header__desc">Portfolio</span></li>
-          <li class="menu__item"><a class="menu__btn menu__btn--wallet" href="wallet.html"></a><span class="header__desc">Wallet</span></li>
-          <li class="menu__item"><a class="menu__btn menu__btn--exchange" href="exchange.html"></a><span class="header__desc">Exchange</span></li>
+      <nav class="header__nav"> <a class="header__back" href="index.html"></a><a class="logo" href="#">
+          <div class="logo__img" style="background-image: none"> </div></a>
+        <ul class="menu menu--settings"> 
+          <li class="menu__item"><a class="menu__btn" href="login.html">Login</a></li>
+          <li class="menu__item active"><a class="menu__btn" href="devices.html">Devices</a></li>
+          <li class="menu__item"><a class="menu__btn" href="personalize.html">Personalize</a></li>
+          <li class="menu__item"><a class="menu__btn" href="security.html">Security</a></li>
+          <li class="menu__item"><a class="menu__btn" href="backup.html">Backup</a></li>
         </ul><a class="header__settings" href="devices.html"><span class="header__desc">Settings</span></a>
       </nav>
     </header>
     <main class="main" id="content">
-      <div class="history"> <a class="history__back" href="exchange.html">Back to Exchange </a>
-        <ul class="history__types"> 
-          <li>exchange</li>
-          <li>receive</li>
-          <li>value</li>
-          <li>status</li>
-        </ul>
-        <div class="history__empty">No exchanges</div>
+      <div class="login"> 
+        <div class="login__title title">Log In</div>
+        <form class="login__form">
+          <input class="login__input" type="mail" placeholder="Your E-mail..."/>
+          <input class="login__input" type="password" placeholder="Your Password..."/>
+          <button class="login__btn btn" type="submit"> <span>Log in </span></button>
+        </form>
+        <div class="login__text">Do not have an account?<a class="login__link" href="register.html">Register </a></div>
       </div>
     </main>
   </body>
