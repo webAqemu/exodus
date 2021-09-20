@@ -21,7 +21,10 @@
           <li class="menu__item active"><a class="menu__btn menu__btn--home" href="index.html"></a><span class="header__desc">Portfolio</span></li>
           <li class="menu__item"><a class="menu__btn menu__btn--wallet" href="wallet.html"></a><span class="header__desc">Wallet</span></li>
           <li class="menu__item"><a class="menu__btn menu__btn--exchange" href="exchange.html"></a><span class="header__desc">Exchange</span></li>
-        </ul><a class="header__settings" href="devices.html"><span class="header__desc">Settings</span></a>
+        </ul>
+        <div class="header__settings"><a class="header__settings--link" href="devices.html"></a><span class="header__desc">Settings</span>
+          <div class="menu"> <a class="option" href="login.html">Login</a><a class="option" href="devices.html">Devices</a><a class="option" href="personalize.html">Personalize</a><a class="option" href="security.html">Security</a><a class="option" href="backup.html">Backup</a></div>
+        </div>
       </nav>
     </header>
     <main class="main" id="content">
@@ -52,6 +55,55 @@
         </ul>
         <button class="exchange__submit disabled">enter amount </button>
         <div class="exchange__value">1 BTC = 13.425079 ETH </div><a class="exchange__history" href="history.html">Exchange History</a>
+        <div class="exchange__search"> 
+          <div class="search__text">Select Asset to Exchange: </div>
+          <div class="search__search">
+            <input type="text" placeholder="Search..."/>
+          </div>
+          <ul class="search__list"> 
+            <li class="search__item"> <img class="search__img" src="./img/icons/BTC.svg" alt="coin logo"/>
+              <div class="search__info"> 
+                <div class="search__name">bnb </div>
+                <div class="search__desc">Binance Coin </div>
+              </div>
+              <div class="seacrh__info"> 
+                <div class="search__amount">0 bnb</div>
+                <div class="search__amount search__amount--dollars">$0.00 usd</div>
+              </div>
+            </li>
+            <li class="search__item"> <img class="search__img" src="./img/icons/BTC.svg" alt="coin logo"/>
+              <div class="search__info"> 
+                <div class="search__name">bnb </div>
+                <div class="search__desc">Binance Coin </div>
+              </div>
+              <div class="seacrh__info"> 
+                <div class="search__amount">0 bnb</div>
+                <div class="search__amount search__amount--dollars">$0.00 usd</div>
+              </div>
+            </li>
+            <li class="search__item"> <img class="search__img" src="./img/icons/BTC.svg" alt="coin logo"/>
+              <div class="search__info"> 
+                <div class="search__name">bnb </div>
+                <div class="search__desc">Binance Coin </div>
+              </div>
+              <div class="seacrh__info"> 
+                <div class="search__amount">0 bnb</div>
+                <div class="search__amount search__amount--dollars">$0.00 usd</div>
+              </div>
+            </li>
+            <li class="search__item"> <img class="search__img" src="./img/icons/BTC.svg" alt="coin logo"/>
+              <div class="search__info"> 
+                <div class="search__name">bnb </div>
+                <div class="search__desc">Binance Coin </div>
+              </div>
+              <div class="seacrh__info"> 
+                <div class="search__amount">0 bnb</div>
+                <div class="search__amount search__amount--dollars">$0.00 usd</div>
+              </div>
+            </li>
+          </ul>
+          <button class="search__shut"></button>
+        </div>
       </div>
     </main>
   </body>

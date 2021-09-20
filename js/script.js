@@ -44,28 +44,21 @@ var pieOptions = {
   stroke: {
     width: 0,
   },
-  // responsive: [
-  //   {
-  //     breakpoint: 480,
-  //     options: {
-  //       chart: {
-  //         width: 200,
-  //       },
-  //       legend: {
-  //         position: "bottom",
-  //       },
-  //     },
-  //   },
-  // ],
+  responsive: [{
+    breakpoint: 769,
+    options: {
+      chart: {
+        height: 300,
+      },
+    },
+  }, ],
 };
 // полноценный график монеты
 var mainOptions = {
-  series: [
-    {
-      name: "",
-      data: [46544, 47865, 45002, 46375, 46315, 45375, 46465, 46875, 46375, 46544, 47865, 45002, 46375, 46315, 45375, 46465, 46875, 46375],
-    },
-  ],
+  series: [{
+    name: "",
+    data: [46544, 47865, 45002, 46375, 46315, 45375, 46465, 46875, 46375, 46544, 47865, 45002, 46375, 46315, 45375, 46465, 46875, 46375],
+  }, ],
   // общие настройки
   chart: {
     height: 300,
@@ -150,18 +143,24 @@ var mainOptions = {
 };
 // кастомный скролл
 new SimpleBar(document.getElementById("content"));
+let type, height;
+if (window.innerWidth < 769) {
+  type = "area"
+  height = "93"
+} else {
+  type = "line"
+  height = "73"
+}
 
 var smOptions = {
-  series: [
-    {
-      name: "",
-      data: [5, 9, 7, 8, 5, 9, 7, 8, 5, 9, 7, 8, 5],
-    },
-  ],
+  series: [{
+    name: "",
+    data: [5, 9, 7, 8, 5, 9, 7, 8, 12, 9, 7, 8, 5],
+  }, ],
   // общие настройки
   chart: {
-    height: 73,
-    type: "line",
+    height: height,
+    type: type,
     zoom: {
       enabled: false,
     },
@@ -224,6 +223,7 @@ var smOptions = {
   // изменение area
   colors: [BTC.color],
 };
+
 if (document.querySelector("#profile__circle")) {
   // надо уменьшить ширину + убрать ховер
   var pieChart = new ApexCharts(document.querySelector("#profile__circle"), pieOptions);
@@ -256,6 +256,7 @@ if (document.querySelector("#profile__circle")) {
     });
   });
 }
+
 if (document.querySelector(".backup")) {
   // убираем класс btn--disabled при вводе пароля от 8 символов
   document.querySelectorAll(".backup__input").forEach((input) => {
@@ -312,7 +313,9 @@ if (document.querySelector(".backup")) {
       if (action === "print") {
         // Function to download data to a file
         function download(data, filename, type) {
-          var file = new Blob([data], { type: type });
+          var file = new Blob([data], {
+            type: type
+          });
           if (window.navigator.msSaveOrOpenBlob)
             // IE10+
             window.navigator.msSaveOrOpenBlob(file, filename);
@@ -363,6 +366,7 @@ if (document.querySelector(".backup")) {
     }
   });
 }
+
 if (document.querySelector(".wallet")) {
   // слайдер монет в кошельке
   $(".coins").slick({
@@ -407,3 +411,43 @@ if (document.querySelector(".wallet")) {
   var walletChartBTC = new ApexCharts(document.querySelector("#walletChartBTC"), mainOptions);
   walletChartBTC.render();
 }
+
+if (document.querySelector(".login")) {
+  document.querySelector(".login").addEventListener("click", function (e) {
+    if (e.target.classList.contains("login__check")) {
+      e.preventDefault();
+      const input = e.target.parentElement.querySelector("input");
+      if (input.value == "hello hello") {
+        e.target.parentElement.parentElement.classList.remove("current");
+        document.querySelector(".login__step--last").classList.add("current");
+      } else {
+        document.querySelector(".login__error").classList.add("active");
+      }
+    }
+  });
+}
+
+if (document.querySelector(".exchange")) {
+  const searchPopUp = document.querySelector(".exchange__search")
+  const searchPopUpClose = document.querySelector(".search__shut")
+  new SimpleBar(document.querySelector(".search__list"))
+  document.querySelectorAll(".exchange__choose").forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      searchPopUp.classList.add("active")
+    })
+  })
+  searchPopUpClose.addEventListener("click", function (e) {
+    e.target.parentElement.classList.remove("active")
+  })
+
+}
+
+document.querySelector(".header__settings").addEventListener("click", function (e) {
+  if (window.innerWidth < 769) {
+    if (e.target.classList.contains("header__settings--link")) {
+      e.preventDefault()
+      e.target.closest(".header").classList.toggle("open")
+
+    }
+  }
+})
