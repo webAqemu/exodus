@@ -440,6 +440,30 @@ if (document.querySelector(".exchange")) {
     e.target.parentElement.classList.remove("active")
   })
 
+
+  const exchangeCheck = function (coinCost, applyCoinCost, balance, value) {
+    // return [проверка, кол-во в долларах, кол-во в другой монете]
+    return [value * coinCost > balance ? false : true, value * coinCost, value * coinCost / applyCoinCost]
+  }
+
+  const balance = 2300
+  const BTC = 46000
+  const ETH = 28000
+  const submitBtn = document.querySelector(".exchange__submit")
+
+  document.getElementById("sent").addEventListener("input", function (e) {
+    const [check, amount, receivedCoin] = [...exchangeCheck(BTC, ETH, balance, this.value)]
+    if (check) {
+      submitBtn.classList.remove("disabled")
+    } else {
+      submitBtn.classList.add("disabled")
+    }
+    document.querySelectorAll(".exchange__dollars").forEach(el => {
+      el.innerHTML = `$${amount}`
+    })
+    document.getElementById("received").value = +receivedCoin.toFixed(6)
+  })
+
 }
 
 document.querySelector(".header__settings").addEventListener("click", function (e) {
