@@ -127,8 +127,12 @@ body {
   border-radius: 25px;
   text-transform: uppercase;
   background-image: linear-gradient(-90deg, rgba(24, 132, 213, 0.5) 0%, rgba(115, 13, 166, 0.5) 100%);
-  min-width: 100%;
-  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .btn {
+    min-width: none;
+    font-size: 16px;
+  }
 }
 .btn::after {
   content: "";
@@ -145,6 +149,8 @@ body {
 .btn--empty {
   font-weight: 300;
   text-transform: none;
+  max-width: 200px;
+  width: 100%;
   background-image: linear-gradient(90deg, rgba(24, 132, 213, 0.5) 0%, rgba(115, 13, 166, 0.5) 100%);
 }
 .btn--empty::after {
@@ -1027,7 +1033,11 @@ body {
   height: 100%;
   position: relative;
   z-index: 2;
-  display: none;
+}
+@media (max-width: 768px) {
+  .token__grafic .show {
+    display: none;
+  }
 }
 .token__grafic .show__btn {
   display: inline-block;
@@ -1630,11 +1640,10 @@ body {
   }
 }
 
-.tabs {
-  display: flex;
+.tabs > ul {
   padding: 0 16px;
-  position: relative;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
 }
 .tabs li.active .tabs__content {
   display: block;
@@ -1667,15 +1676,15 @@ body {
   transition: opacity 0.3s;
 }
 .tabs__content {
-  position: absolute;
-  width: 100%;
-  left: 0;
   display: none;
   padding: 32px 16px;
 }
+.tabs__content.active {
+  display: block;
+}
 @media (max-width: 768px) {
   .tabs__content {
-    padding: 32px 0 80px;
+    padding: 32px 0 0;
   }
 }
 .tabs__empty {

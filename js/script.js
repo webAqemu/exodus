@@ -403,8 +403,13 @@ if (document.querySelector(".wallet")) {
 
   document.querySelector(".tabs").addEventListener("click", function (e) {
     if (e.target.classList.contains("tabs__btn")) {
-      this.querySelector(".active").classList.remove("active");
-      e.target.parentElement.classList.add("active");
+      const data = e.target.dataset.tab
+      const content = document.querySelector(`.tabs__content[data-tab="${data}"]`)
+      const btn = e.target.parentElement
+      const parent = e.target.closest(".tabs")
+      parent.querySelectorAll(".active").forEach(el => el.classList.remove("active"))
+      btn.classList.add("active");
+      content.classList.add("active");
     }
   });
 

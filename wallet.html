@@ -175,40 +175,44 @@
           </div>
           <div class="token__chart" id="walletChartBTC"></div>
         </div>
-        <ul class="tabs">
-          <li class="active">
-            <button class="tabs__btn">activity</button>
-            <div class="line"></div>
-            <div class="tabs__content tabs__activity"> 
+        <div class="tabs">
+          <ul>
+            <li class="active">
+              <button class="tabs__btn" data-tab="activity">activity</button>
+              <div class="line"></div>
+            </li>
+            <li>
+              <button class="tabs__btn" data-tab="about">about</button>
+              <div class="line"></div>
+            </li>
+            <li>
+              <button class="tabs__btn" data-tab="videos">videos</button>
+              <div class="line"></div>
+            </li>
+            <li>
+              <button class="tabs__btn" data-tab="blog">blog</button>
+              <div class="line"></div>
+            </li>
+          </ul>
+          <div class="tabs__wrapper"> 
+            <div class="tabs__content tabs__activity active" data-tab="activity"> 
               <div class="tabs__empty">no bitcoin cash transactions</div>
             </div>
-          </li>
-          <li>
-            <button class="tabs__btn">about</button>
-            <div class="line"></div>
-            <div class="tabs__content tabs__about"> 
+            <div class="tabs__content tabs__about" data-tab="about"> 
               <div class="tabs__text">BitcoinCash is a fork, or split, from original Bitcoin that attempts to increase network transaction capacity in order to be useful for small, everybody transactions.</div>
               <ul class="tabs__links"> 
                 <li> <a href="#" style="background-image:url(./img/icons/chain.svg)"> </a></li>
                 <li> <a href="#" style="background-image:url(./img/icons/reddit-logo.svg)"> </a></li>
               </ul>
             </div>
-          </li>
-          <li>
-            <button class="tabs__btn">videos</button>
-            <div class="line"></div>
-            <div class="tabs__content tabs__videos"> 
+            <div class="tabs__content tabs__videos" data-tab="videos"> 
               <ul class="videos"> 
                 <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
                 <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
                 <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
               </ul>
             </div>
-          </li>
-          <li>
-            <button class="tabs__btn">blog</button>
-            <div class="line"></div>
-            <div class="tabs__content tabs__blog">
+            <div class="tabs__content tabs__blog" data-tab="blog">
               <ul class="videos"> 
                 <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
                 <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
@@ -217,8 +221,8 @@
                 <li class="videos__item"> <a class="videos__link" href="#"><img class="videos__img" src="./img/video-preview.jpg" alt="video preview"/>What is Bitcoin Cash (BCH)?</a></li>
               </ul>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </main>
   </body>
