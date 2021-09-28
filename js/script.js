@@ -1,5 +1,16 @@
 const BTC = {
   color: "#d4d23f",
+  id: "chartBTC"
+};
+
+const walletBTC = {
+  color: "#d4d23f",
+  id: "walletChartBTC"
+};
+
+const ETH = {
+  color: "#d4d23f",
+  id: "chartETH"
 };
 // график для отображения имемющихся средств
 var pieOptions = {
@@ -54,13 +65,14 @@ var pieOptions = {
   }, ],
 };
 // полноценный график монеты
-var mainOptions = {
+var mainOptionsBTC = {
   series: [{
     name: "",
     data: [46544, 47865, 45002, 46375, 46315, 45375, 46465, 46875, 46375, 46544, 47865, 45002, 46375, 46315, 45375, 46465, 46875, 46375],
   }, ],
   // общие настройки
   chart: {
+    id: BTC.id,
     height: 300,
     type: "line",
     zoom: {
@@ -140,6 +152,182 @@ var mainOptions = {
 
   // изменение area
   colors: [BTC.color],
+};
+var mainOptionsWalletBTC = {
+  series: [{
+    name: "",
+    data: [46544, 47865, 45002, 46375, 46315, 45375, 46465, 46875, 46375, 46544, 47865, 45002, 46375, 46315, 45375, 46465, 46875, 46375],
+  }, ],
+  // общие настройки
+  chart: {
+    id: walletBTC.id,
+    height: 300,
+    type: "line",
+    zoom: {
+      enabled: false,
+    },
+    toolbar: {
+      show: false,
+    },
+  },
+  dataLabels: {
+    enabled: false,
+  },
+
+  // изменение линии
+  stroke: {
+    curve: "straight",
+    width: 1.5,
+    colors: walletBTC.color,
+  },
+  // изменение сетки
+  grid: {
+    borderColor: "rgba(255, 255, 255, 0.1)",
+    row: {
+      colors: ["transparent"],
+    },
+  },
+  // изменение на оси Х
+  xaxis: {
+    categories: ["Aug 6", "Aug 7", "Aug 8", "Aug 9", "Aug 10", "Aug 11", "Aug 12", "Aug 13", "Aug 14", "Aug 15", "Aug 16", "Aug 17", "Aug 18", "Aug 19", "Aug 20", "Aug 21", "Aug 22", "Aug 23"],
+    labels: {
+      style: {
+        colors: "white",
+        fontSize: "14px",
+        fontFamily: "'Etica', sans-serif",
+      },
+    },
+
+    tooltip: {
+      enabled: false,
+    },
+
+    axisTicks: {
+      show: false,
+    },
+
+    crosshairs: {
+      stroke: {
+        color: "rgba(255, 255, 255, 0.3)",
+      },
+    },
+
+    axisBorder: {
+      show: false,
+    },
+  },
+
+  // изменения на оси У
+  yaxis: {
+    labels: {
+      style: {
+        colors: "white",
+        fontSize: "14px",
+        fontFamily: "'Etica', sans-serif",
+      },
+      formatter: (value) => {
+        return "$ " + value;
+      },
+    },
+  },
+
+  // изменение маркера
+  markers: {
+    colors: "#0a0e11",
+    strokeColors: walletBTC.color,
+    atrokeWidth: 1.5,
+  },
+
+  // изменение area
+  colors: [BTC.color],
+};
+var mainOptionsETH = {
+  series: [{
+    name: "",
+    data: [46544, 47865, 45002, 46375, 46315, 45375, 46465, 46875, 46375, 46544, 47865, 45002, 46375, 46315, 45375, 46465, 46875, 46375],
+  }, ],
+  // общие настройки
+  chart: {
+    id: ETH.id,
+    height: 300,
+    type: "line",
+    zoom: {
+      enabled: false,
+    },
+    toolbar: {
+      show: false,
+    },
+  },
+  dataLabels: {
+    enabled: false,
+  },
+
+  // изменение линии
+  stroke: {
+    curve: "straight",
+    width: 1.5,
+    colors: BTC.color,
+  },
+  // изменение сетки
+  grid: {
+    borderColor: "rgba(255, 255, 255, 0.1)",
+    row: {
+      colors: ["transparent"],
+    },
+  },
+  // изменение на оси Х
+  xaxis: {
+    categories: ["Aug 6", "Aug 7", "Aug 8", "Aug 9", "Aug 10", "Aug 11", "Aug 12", "Aug 13", "Aug 14", "Aug 15", "Aug 16", "Aug 17", "Aug 18", "Aug 19", "Aug 20", "Aug 21", "Aug 22", "Aug 23"],
+    labels: {
+      style: {
+        colors: "white",
+        fontSize: "14px",
+        fontFamily: "'Etica', sans-serif",
+      },
+    },
+
+    tooltip: {
+      enabled: false,
+    },
+
+    axisTicks: {
+      show: false,
+    },
+
+    crosshairs: {
+      stroke: {
+        color: "rgba(255, 255, 255, 0.3)",
+      },
+    },
+
+    axisBorder: {
+      show: false,
+    },
+  },
+
+  // изменения на оси У
+  yaxis: {
+    labels: {
+      style: {
+        colors: "white",
+        fontSize: "14px",
+        fontFamily: "'Etica', sans-serif",
+      },
+      formatter: (value) => {
+        return "$ " + value;
+      },
+    },
+  },
+
+  // изменение маркера
+  markers: {
+    colors: "#0a0e11",
+    strokeColors: BTC.color,
+    atrokeWidth: 1.5,
+  },
+
+  // изменение area
+  colors: [ETH.color],
 };
 // кастомный скролл
 new SimpleBar(document.getElementById("content"));
@@ -236,10 +424,10 @@ if (document.querySelector("#profile__circle")) {
   var smChartETH = new ApexCharts(document.querySelector("#graficETH"), smOptions);
   smChartETH.render();
 
-  var chartBTC = new ApexCharts(document.querySelector("#chartBTC"), mainOptions);
+  var chartBTC = new ApexCharts(document.querySelector("#chartBTC"), mainOptionsBTC);
   chartBTC.render();
 
-  var chartETH = new ApexCharts(document.querySelector("#chartETH"), mainOptions);
+  var chartETH = new ApexCharts(document.querySelector("#chartETH"), mainOptionsETH);
   chartETH.render();
 
   // показать/скрыть большой график монеты
@@ -377,6 +565,10 @@ if (document.querySelector(".wallet")) {
   });
 
   document.querySelector(".wallet").addEventListener("click", function (e) {
+    new SimpleBar(document.getElementById("transactions"), {
+      autoHide: false
+    });
+
     if (e.target.classList.contains("wallet__open")) {
       e.preventDefault();
       e.target.parentElement.classList.toggle("open");
@@ -413,7 +605,7 @@ if (document.querySelector(".wallet")) {
     }
   });
 
-  var walletChartBTC = new ApexCharts(document.querySelector("#walletChartBTC"), mainOptions);
+  var walletChartBTC = new ApexCharts(document.querySelector("#walletChartBTC"), mainOptionsWalletBTC);
   walletChartBTC.render();
 }
 
@@ -480,3 +672,19 @@ document.querySelector(".header__settings").addEventListener("click", function (
     }
   }
 })
+
+if (document.querySelector(".token__times")) {
+  document.querySelectorAll(".token__times").forEach(time => {
+    time.addEventListener("click", function (e) {
+      let chartID = this.parentElement.parentElement.querySelector(".token__chart")
+      chartID = chartID.getAttribute("id")
+      let chartData = [{
+        data: [49544, 50865, 42002, 41375, 41315, 35375, 46465, 46875, 46375, 46544, 47865, 45002, 46375, 46315, 45375, 46465, 46875, 46375]
+      }]
+
+      ApexCharts.exec(chartID, 'updateSeries', chartData);
+
+
+    })
+  })
+}

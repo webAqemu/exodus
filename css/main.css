@@ -1583,10 +1583,12 @@ body {
   justify-content: center;
   width: 100%;
   margin-bottom: 64px;
+  margin-left: 70px;
 }
 @media (max-width: 768px) {
   .coin__btns {
     flex-direction: column;
+    margin-left: 0;
   }
 }
 .coin__btns button:not(:last-child) {
@@ -1645,6 +1647,9 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
 }
+.tabs > ul li:not(:last-child) {
+  margin-right: 16px;
+}
 .tabs li.active .tabs__content {
   display: block;
 }
@@ -1653,9 +1658,6 @@ body {
 }
 .tabs li.active .line {
   opacity: 1;
-}
-.tabs li:not(:last-child) {
-  margin-right: 16px;
 }
 .tabs button {
   font-weight: 300;
@@ -1735,6 +1737,28 @@ body {
   .tabs__blog .videos__item {
     max-width: 500px;
   }
+}
+.tabs__transactions {
+  width: 100%;
+}
+.tabs__transactions .simplebar-scrollbar::before {
+  background: rgba(255, 255, 255, 0.3);
+}
+.tabs__transaction {
+  min-width: 1288px;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
+}
+
+.transaction {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.transaction--titles {
+  font-size: 14px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  padding-bottom: 16px;
 }
 
 .videos {
