@@ -564,10 +564,10 @@ if (document.querySelector(".wallet")) {
     prevArrow: '<button type="button" class="coins__arrow coins__arrow--prev"></button>',
   });
 
+  new SimpleBar(document.getElementById("transactions"), {
+    autoHide: false
+  });
   document.querySelector(".wallet").addEventListener("click", function (e) {
-    new SimpleBar(document.getElementById("transactions"), {
-      autoHide: false
-    });
 
     if (e.target.classList.contains("wallet__open")) {
       e.preventDefault();
@@ -686,5 +686,17 @@ if (document.querySelector(".token__times")) {
 
 
     })
+  })
+}
+
+if (document.querySelector(".personalize")) {
+  document.querySelector(".personalize").addEventListener("click", function (e) {
+    if (e.target.classList.contains("item__currency") || e.target.classList.contains("item__language")) {
+      e.target.classList.toggle("active")
+    }
+    if (e.target.classList.contains("option")) {
+      e.target.parentElement.parentElement.querySelector(".choosed").innerHTML = e.target.innerHTML
+      e.target.parentElement.parentElement.classList.remove("active")
+    }
   })
 }
