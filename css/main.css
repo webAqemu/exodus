@@ -201,7 +201,7 @@ body {
 @media (max-width: 768px) {
   .item {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
   }
 }
 .item__icon {
@@ -325,6 +325,14 @@ body {
   position: relative;
   margin-left: auto;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .item__currency, .item__language {
+    margin-left: 0;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+  }
 }
 .item__currency::after, .item__language::after {
   content: "";
