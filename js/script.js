@@ -591,7 +591,49 @@ if (document.querySelector(".wallet")) {
       e.target.parentElement.classList.toggle("opened");
       e.target.classList.toggle("opened");
     }
+
+    if (e.target.dataset.action === "send") {
+      const popup = document.getElementById("send")
+      popup.classList.add("active")
+    }
+
+    if (e.target.dataset.action === "recieve") {
+      const popup = document.getElementById("recieve")
+      popup.classList.add("active")
+    }
+
+    if (e.target.classList.contains("popup__close")) {
+      e.target.closest(".popup").classList.remove("active")
+    }
+
+    if (e.target.classList.contains("popup__copy")) {
+      const value = e.target.parentElement.querySelector("span").innerHTML
+      var area = document.createElement('textarea');
+      document.body.appendChild(area);
+      area.value = value;
+      area.select();
+      document.execCommand("copy");
+      document.body.removeChild(area);
+    }
   });
+
+  document.getElementById("coinAmount").addEventListener("input", function (e) {
+    const coinAmount = this.value;
+    const rate = this.dataset.rate
+    console.log(rate);
+    if (coinAmount) {
+      document.getElementById("moneyAmount").value = Number(coinAmount) * Number(rate)
+    }
+  })
+
+  document.getElementById("moneyAmount").addEventListener("input", function (e) {
+    const moneyAmount = this.value;
+    const rate = document.getElementById("coinAmount").dataset.rate
+    console.log(moneyAmount);
+    if (moneyAmount) {
+      document.getElementById("coinAmount").value = (moneyAmount * 1 / Number(rate)).toFixed(8)
+    }
+  })
 
   document.querySelector(".tabs").addEventListener("click", function (e) {
     if (e.target.classList.contains("tabs__btn")) {

@@ -138,9 +138,8 @@
           <div class="coin__price"> <span class="num">0</span>bch </div>
           <div class="coin__owned">$<span>0.00</span>usd </div>
           <div class="coin__btns"> 
-            <button class="coin__btn">Send</button>
-            <button class="coin__btn">Recieve</button>
-            <button class="coin__exchange"></button>
+            <button class="coin__btn" data-action="send">Send</button>
+            <button class="coin__btn" data-action="recieve">Recieve</button><a class="coin__exchange" href="./exchange.html"></a>
           </div>
         </div>
         <div class="wallet__chart">
@@ -259,6 +258,25 @@
               </ul>
             </div>
           </div>
+        </div>
+        <div class="wallet__send popup" id="send"><img class="popup__img" src="./img/icons/BTC.svg" alt="coin icon" width="64" height="64"/>
+          <form class="popup__form" action="#"> 
+            <input class="popup__address" type="text" placeholder="Send to Bitcoin Cash address..." required="required"/>
+            <div class="popup__coin">btc</div>
+            <input class="popup__input popup__input--coin" type="text" placeholder="0.00" required="required" id="coinAmount" data-rate="24000"/>
+            <div class="popup__value">usd</div>
+            <input class="popup__input" type="text" placeholder="0.00" required="required" id="moneyAmount"/>
+            <button class="popup__btn" type="submit">Send</button>
+          </form>
+          <button class="popup__close"></button>
+        </div>
+        <div class="wallet__send popup" id="recieve"><img class="popup__img" src="./img/icons/BTC.svg" alt="coin icon" width="64" height="64"/>
+          <div class="popup__text">Your Bitcoin Cash Address </div>
+          <div class="popup__address popup__address--filled"> <span>ndhdbf7563fined89enufge6cndklsdf7 </span>
+            <button class="popup__copy"> </button>
+          </div>
+          <div class="popup__QR" style="background-image: url(./img/qr.png)"></div>
+          <button class="popup__close"></button>
         </div>
       </div>
     </main>
