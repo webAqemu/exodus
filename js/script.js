@@ -742,3 +742,28 @@ if (document.querySelector(".personalize")) {
     }
   })
 }
+
+if (document.querySelector(".security")) {
+  document.querySelector(".security").addEventListener("click", function (e) {
+    if (e.target.getAttribute("id") == "2step") {
+      document.querySelector(".security__wrapper.active").classList.remove("active")
+      document.getElementById("2stepVerification").classList.add("active")
+    }
+
+    if (e.target.classList.contains("security__btn") && !e.target.classList.contains("security__btn--home")) {
+      e.preventDefault()
+      const stepEl = e.target.closest(".security__step");
+      const step = stepEl.getAttribute("id");
+      const stepNum = stepEl.dataset.stepnum;
+      const nextStepEl = this.querySelector(`.security__step[data-stepnum="${+stepNum + 1}"]`);
+      const stepNumEl = this.querySelector(`.steps__item[data-step="${step}"]`);
+      const nextStepNumEl = this.querySelector(`.steps__item[data-step="${nextStepEl.getAttribute("id")}"]`);
+
+      stepNumEl.classList.add("completed");
+      stepEl.classList.remove("current");
+      nextStepEl.classList.add("current");
+      nextStepNumEl.classList.add("current");
+
+    }
+  })
+}

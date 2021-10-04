@@ -35,13 +35,69 @@
     </header>
     <main class="main" id="content">
       <div class="security" data-content="security">
-        <h2 class="security__title title">Additional Security</h2>
-        <div class="security__item item">
-          <div class="item__icon"><span style="background-image: url(./img/icons/shield.svg)"> </span></div>
-          <div class="item__info"> 
-            <div class="item__subtitle">Auto-Lock</div>
-            <div class="item__desc">Exodus can lock after a specified duration. This additional security helps if you leave Exodus open and walk away from computer</div>
-            <button class="item__link" id="goToBackUp">Back up your wallet to enable this feature</button>
+        <div class="security__wrapper active">
+          <h2 class="security__title title">Additional Security</h2>
+          <div class="security__item item">
+            <div class="item__icon"><span style="background-image: url(./img/icons/shield.svg)"> </span></div>
+            <div class="item__info"> 
+              <div class="item__subtitle">Auto-Lock</div>
+              <div class="item__desc">Exodus can lock after a specified duration. This additional security helps if you leave Exodus open and walk away from computer</div>
+              <button class="item__link" id="goToBackUp">Back up your wallet to enable this feature</button>
+            </div>
+          </div>
+          <div class="security__item item">
+            <div class="item__icon"><span style="background-image: url(./img/icons/qr.png)"> </span></div>
+            <div class="item__info"> 
+              <div class="item__subtitle">Google 2-step Verification</div>
+              <div class="item__desc">Exodus can lock after a specified duration. This additional security helps if you leave Exodus open and walk away from computer</div>
+              <button class="item__link" id="2step">Enable 2-step Verification</button>
+            </div>
+          </div>
+        </div>
+        <div class="security__wrapper" id="2stepVerification">
+          <ul class="steps"> 
+            <li class="steps__item current" data-step="download">
+              <div class="steps__num">1</div>
+              <div class="steps__text">Download</div>
+              <div class="steps__line"></div>
+            </li>
+            <li class="steps__item" data-step="qr">
+              <div class="steps__num">2</div>
+              <div class="steps__text">QR</div>
+              <div class="steps__line"></div>
+            </li>
+            <li class="steps__item" data-step="code">
+              <div class="steps__num">3</div>
+              <div class="steps__text">Code</div>
+              <div class="steps__line"></div>
+            </li>
+            <li class="steps__item" data-step="finish">
+              <div class="steps__num">4</div>
+              <div class="steps__text">Finish</div>
+              <div class="steps__line"></div>
+            </li>
+          </ul>
+          <div class="security__step current" id="download" data-stepnum="1">
+            <div class="security__subtitle">2-Step Verification</div>
+            <div class="security__text">1. Установите приложение для двухфакторной аутентификации</div><a class="security__link" href="#">Google Authenticator для iOS</a><a class="security__link" href="#">Google Authenticator для Android</a>
+            <button class="security__btn btn"> <span>Next</span></button>
+          </div>
+          <div class="security__step" id="qr" data-stepnum="2">
+            <div class="security__subtitle">2-Step Verification</div>
+            <div class="security__text">2. Сфотографируйте картинку в установленном приложении</div><img class="security__qr" src="./img/qr.png" alt="qr"/>
+            <button class="security__btn btn"> <span>Next</span></button>
+          </div>
+          <div class="security__step" id="code" data-stepnum="3">
+            <div class="security__subtitle">2-Step Verification</div>
+            <div class="security__text">3. Введите код подтверждения с вашего устройства</div>
+            <form class="security__form" action="#"> 
+              <input class="security__input" type="text"/>
+              <button class="security__btn btn"> <span>Finish</span></button>
+            </form>
+          </div>
+          <div class="security__step" id="finish" data-stepnum="4">
+            <div class="security__subtitle">2-Step Verification</div>
+            <div class="security__finish"></div><a class="security__btn security__btn--home btn" href="./index.html"> <span>Home</span></a>
           </div>
         </div>
       </div>
