@@ -9,7 +9,7 @@ const walletBTC = {
 };
 
 const ETH = {
-  color: "#d4d23f",
+  color: "#627EEA",
   id: "chartETH"
 };
 // график для отображения имемющихся средств
@@ -266,7 +266,7 @@ var mainOptionsETH = {
   stroke: {
     curve: "straight",
     width: 1.5,
-    colors: BTC.color,
+    colors: ETH.color,
   },
   // изменение сетки
   grid: {
@@ -322,7 +322,7 @@ var mainOptionsETH = {
   // изменение маркера
   markers: {
     colors: "#0a0e11",
-    strokeColors: BTC.color,
+    strokeColors: ETH.color,
     atrokeWidth: 1.5,
   },
 

@@ -87,15 +87,14 @@ body {
   background-color: #0a0e11;
   color: #fff;
   min-height: 100vh;
+  background-image: url(../img/bg-mobile.jpg);
 }
 
 .main {
   overflow-y: auto;
   padding: 32px 30px 0;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
   height: calc(100vh - 80px);
-  background-image: linear-gradient(200deg, #1e2429 0%, #0a0e11 100%);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 @media (max-width: 768px) {
   .main {
@@ -103,7 +102,7 @@ body {
     padding: 16px 16px 80px;
     border-radius: 0;
     height: 100vh;
-    background-image: none;
+    background-color: none;
   }
 }
 
@@ -272,6 +271,11 @@ body {
 .item__check {
   position: relative;
   margin-left: auto;
+  border-radius: 25px;
+  display: flex;
+}
+.item__check::before {
+  background-size: 30%;
 }
 .item__check input {
   position: absolute;
@@ -329,7 +333,7 @@ body {
 @media (max-width: 768px) {
   .item__currency, .item__language {
     margin-left: 0;
-    position: absolute;
+    position: absolute !important;
     top: 24px;
     right: 16px;
   }
@@ -542,6 +546,24 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.disabled {
+  position: relative;
+  overflow: hidden;
+}
+.disabled::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(192, 192, 192, 0.7);
+  background-image: url(../img/icons/locked.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 100;
 }
 
 .logo {
@@ -2364,16 +2386,16 @@ body {
   background-color: rgba(10, 14, 17, 0.4);
 }
 .exchange__item:last-of-type {
-  background-color: rgba(10, 14, 17, 0.8);
+  background-color: rgba(10, 14, 17, 0.2);
 }
 @media (max-width: 768px) {
   .exchange__item:last-of-type {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
   }
 }
 @media (max-width: 768px) {
   .exchange__item {
-    padding: 48px 0 24px 24px;
+    padding: 48px 8px 24px 24px;
     background-color: transparent;
   }
 }
@@ -2455,10 +2477,14 @@ body {
   position: absolute;
   right: 48px;
   bottom: 24px;
-  right: 0;
-  top: 32px;
-  bottom: auto;
-  color: rgba(255, 255, 255, 0.6);
+}
+@media (max-width: 768px) {
+  .exchange__dollars {
+    right: 8px;
+    top: 32px;
+    bottom: auto;
+    color: rgba(255, 255, 255, 0.6);
+  }
 }
 .exchange__swap {
   width: 44px;
